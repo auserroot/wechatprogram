@@ -1,0 +1,31 @@
+<!--pages/category/category.wxml-->
+<view class='categroy-warp'>
+    <view class='categroy-title'>
+        {{title}}
+    </view>
+      <view class='categroy-input'>
+          <input type='text' name= 'search' placeholder='搜索' bindinput="handleInput" />
+      </view>
+        
+    <view class='categroy-songlist'>
+        <navigator url= '../home/home?songName={{songName}}&getSongUrl={{getSongUrl}}&singer={{singer}}&getImgUrl={{getImgUrl}}' open-type="switchTab"  class="list" wx:for="{{getSongsList}}" wx:key="id">
+            <view class="play" bindtap="playmusic"></view>
+                <view class='span' bindtap="playmusic" data-id='{{item.id}}' data-mvid='{{item.mvid}}'  data-songsname='{{item.name}}' data-singer='{{item.artists[0].name}}' >{{ item.name }}</view>
+             <view class='author'>
+                  {{item.artists[0].name}}
+             </view>
+               
+                <view
+                    class="video {{item.mvid == 0 ?'hidden':''}}"
+                    bindtap="playvideo" data-mvid='{{item.mvid}}'
+                 >
+            </view>
+        </navigator>
+    </view>
+
+    <view class='audio-player'>
+        <audio id="music"  src="{{getSongUrl}}" name="{{songName}}" author="{{singer}}" poster="{{getImgUrl}}" loop="true" controls="true" bindplay="autoPlay" bindpause="autoPause" > 
+    </audio>
+    </view>
+</view>
+    

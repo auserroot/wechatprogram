@@ -1,0 +1,87 @@
+.categroy-warp {
+  position: relative;
+  .categroy-title {
+    text-align: center;
+    font-size: 40rpx;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+  }
+  .categroy-input {
+    margin: 10rpx 20rpx;
+    position: fixed;
+    top: 40rpx;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #fff;
+
+    input {
+      width: 100%;
+      height: 80rpx;
+      border: 2rpx solid #ccc;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+  .categroy-songlist {
+    position: absolute;
+    top: 138rpx;
+    left: 0;
+    right: 0;
+    margin-bottom: 120rpx;
+    width: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .list:nth-child(odd) {
+      background: rgba(141, 141, 141, 0.623);
+    }
+    .list {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      .play {
+        width: 50rpx;
+        height: 50rpx;
+        // background: url(../../images/table.png) -20px -20px;
+        align-self: center;
+      }
+      .span {
+        width: 300rpx;
+        height: 160rpx;
+        line-height: 160rpx;
+        text-align: center;
+        color: rgb(83, 6, 58);
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .author {
+        line-height: 160rpx;
+      }
+      .video {
+        width: 50rpx;
+        height: 50rpx;
+        // background: url(../../images/table.png) -2px -44px;
+        align-self: center;
+      }
+    }
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  .audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    audio {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

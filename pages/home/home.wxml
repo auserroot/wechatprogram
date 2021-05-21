@@ -1,0 +1,14 @@
+<!--pages/home/home.wxml-->
+<view class='box'>
+    <view class='box-item'>
+        <image class="player-bar {{active?'play':''}}" src="{{url_player_bar}}" mode="aspectFit" lazy-load="false" />
+        <image class="disc {{active?'rotate':''}}" src="{{url_disc}}" mode="aspectFit" lazy-load="false" />
+        <image class="img" src="{{url_item}}" mode="aspectFit" lazy-load="false" />
+    </view>
+    <view class='footer' bindtap="audio_btn"> 
+        <audio id="music"  src="{{getSongUrl}}" name="{{songName}}" author="{{singer}}" poster="{{getImgUrl}}" loop="true" controls="true" bindplay="audioPlay" bindpause="audioPause" > 
+       </audio>               
+    </view>
+      
+</view>
+  

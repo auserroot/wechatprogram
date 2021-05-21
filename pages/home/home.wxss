@@ -1,0 +1,66 @@
+.box,
+.box-item,
+.player-bar,
+.disc,
+.footer,
+.img,
+#music {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  width: 100%;
+  height: 100%;
+}
+.box .box-item {
+  width: 100%;
+  height: 80%;
+  position: relative;
+}
+.box .box-item .player-bar {
+  left: 200rpx;
+  top: 100rpx;
+  position: absolute;
+  z-index: 8;
+  transform: scale(0.8) rotate(-25deg);
+  transform-origin: 12px 12px;
+  transition: all 2s;
+}
+.box .box-item .img {
+  top: 400rpx;
+  left: 240rpx;
+  position: absolute;
+  width: 280rpx;
+  height: 280rpx;
+}
+.box .box-item .disc {
+  position: absolute;
+  left: 60rpx;
+  top: 300rpx;
+  z-index: 6;
+}
+.box .box-item .play {
+  transform: scale(0.8) rotate(0deg);
+}
+.box .box-item .rotate {
+  animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.box .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.box .footer #music {
+  display: flex;
+  flex-direction: column;
+}
